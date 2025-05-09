@@ -6,6 +6,16 @@ df = pd.read_csv("../data/raw/synthetic_cardio_health_data.csv", encoding="cp125
 # df = pd.read_csv("../data/raw/parsed_export.csv", encoding="cp1252")
 
 df.columns = [col.strip() for col in df.columns]
+print("📄 Available columns:", df.columns.tolist())
+
+# required_cols = ["type", "value", "startDate"]
+# available_cols = [col for col in required_cols if col in df.columns]
+
+# if available_cols:
+#     df.dropna(subset=available_cols, inplace=True)
+# else:
+#     raise KeyError(f"Missing all required columns: {required_cols}")
+
 
 df.dropna(subset=["type", "value", "startDate"], inplace=True)
 df["value"] = pd.to_numeric(df["value"], errors="coerce")

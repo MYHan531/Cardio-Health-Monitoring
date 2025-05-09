@@ -2,3 +2,4 @@
 *.xml
 raw/
 clean/
+scripts/fibo.py
