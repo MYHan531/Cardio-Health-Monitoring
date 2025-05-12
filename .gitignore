@@ -1,5 +1,6 @@
 *.csv
 *.xml
+*.pkl
 raw/
 clean/
 scripts/fibo.py
